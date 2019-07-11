@@ -1,0 +1,8 @@
+{
+    "name": "v8/log",
+    "description": "基于Hyperf框架封装的Log，方便使用",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2"
+    }
+}
