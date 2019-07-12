@@ -4,5 +4,13 @@
     "license": "MIT",
     "require": {
         "php": ">=7.2"
+    },
+    "autoload": {
+        "files": [
+            "src/Functions.php"
+        ],
+        "psr-4": {
+            "V8\\Log\\": "src"
+        }
     }
 }
