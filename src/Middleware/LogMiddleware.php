@@ -6,6 +6,7 @@
  * Time: 8:40 PM
  */
 declare(strict_types=1);
+
 namespace V8\Log\Middleware;
 
 use Psr\Container\ContainerInterface;
@@ -47,18 +48,8 @@ class LogMiddleware implements MiddlewareInterface
 	 */
 	private function getTraceId()
 	{
-		$parentId = Coroutine::parentId();
-		if ($parentId > 0) {
-			var_dump($parentId);
-			Context::copy($parentId, ['tarce.id']);
-
-			return Context::get('tarce.id');
-		}
-
 		$root    = Context::get('tracer.root');
 		$traceId = $root->getContext()->getTraceId();
 		Context::set('tarce.id', $traceId);
-
-		return $traceId;
 	}
 }

@@ -34,9 +34,9 @@ class Log
 			// 只能适应两层协程的情况，再深目前没辙
 			$pid = Coroutine::parentId();
 			if ($pid > 0) {
-				$record['extra']['traceid'] = Context::get('trace.id', null, $pid);
+				$record['extra']['traceid'] = Context::get('tarce.id', null, $pid);
 			} else {
-				$record['extra']['traceid'] = Context::get('trace.id');
+				$record['extra']['traceid'] = Context::get('tarce.id');
 			}
 
 			return $record;
